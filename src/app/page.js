@@ -67,10 +67,10 @@ export default function Home() {
               
               <div className="flex flex-col sm:flex-row gap-4">
                 <button className="group px-8 py-4 bg-gradient-to-r from-[#156ac7] to-blue-600 text-white rounded-xl hover:shadow-2xl hover:shadow-[#156ac7]/50 transition-all font-semibold text-lg flex items-center justify-center relative overflow-hidden">
-                  <span className="relative z-10 flex items-center">
+                  <a href='https://autoserviceapp.online/' target='_blank' className="relative z-10 flex items-center">
                     Start Using Free
                     <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-                  </span>
+                  </a>
                   <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-[#156ac7] opacity-0 group-hover:opacity-100 transition-opacity"></div>
                 </button>
                 <button className="px-8 py-4 bg-white/5 border border-white/10 text-white rounded-xl hover:bg-white/10 transition-all font-semibold text-lg backdrop-blur-sm">
@@ -268,9 +268,9 @@ export default function Home() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-10 py-5 bg-gradient-to-r from-[#156ac7] to-blue-600 text-white rounded-xl hover:shadow-2xl hover:shadow-[#156ac7]/50 transition-all font-semibold text-lg">
+            <a href='https://autoserviceapp.online/' target='_blank' className="px-10 py-5 bg-gradient-to-r from-[#156ac7] to-blue-600 text-white rounded-xl hover:shadow-2xl hover:shadow-[#156ac7]/50 transition-all font-semibold text-lg">
               Start Using Free
-            </button>
+            </a>
             <Link href="/features" className="px-10 py-5 bg-white/5 border border-white/10 text-white rounded-xl hover:bg-white/10 transition-all font-semibold text-lg backdrop-blur-sm">
               See All Features
             </Link>

@@ -454,10 +454,10 @@ export default function Contact() {
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="px-10 py-5 bg-gradient-to-r from-[#156ac7] to-blue-600 text-white rounded-xl hover:shadow-2xl hover:shadow-[#156ac7]/50 transition-all font-semibold text-lg group">
+            <a href='https://autoserviceapp.online/' target='_blank' className="px-10 py-5 bg-gradient-to-r from-[#156ac7] to-blue-600 text-white rounded-xl hover:shadow-2xl hover:shadow-[#156ac7]/50 transition-all font-semibold text-lg group">
               Start Using Free
               <ArrowRight className="inline ml-2 group-hover:translate-x-1 transition-transform" size={20} />
-            </button>
+            </a>
             <Link href="/features" className="px-10 py-5 bg-white/5 border border-white/10 text-white rounded-xl hover:bg-white/10 transition-all font-semibold text-lg backdrop-blur-sm inline-flex items-center justify-center gap-2">
               Explore Features
               <ArrowRight size={20} />

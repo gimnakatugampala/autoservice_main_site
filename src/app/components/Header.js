@@ -50,10 +50,10 @@ export default function Header() {
             <div className="px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-lg text-sm font-semibold text-green-400">
               100% FREE
             </div>
-            <button className="px-6 py-2.5 bg-gradient-to-r from-[#156ac7] to-blue-600 text-white rounded-lg hover:shadow-lg hover:shadow-[#156ac7]/50 transition-all font-medium group">
+            <a href='https://autoserviceapp.online/' target='_blank' className="px-6 py-2.5 bg-gradient-to-r from-[#156ac7] to-blue-600 text-white rounded-lg hover:shadow-lg hover:shadow-[#156ac7]/50 transition-all font-medium group">
               Use App Free
               <ArrowRight className="inline ml-2 group-hover:translate-x-1 transition-transform" size={16} />
-            </button>
+            </a>
           </div>
 
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} className="md:hidden text-white">

@@ -6,6 +6,9 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { Car, CheckCircle, FileText, Package, Zap, Shield, Clock, Star, TrendingUp, Sparkles, ArrowRight, Gift } from 'lucide-react';
 
+
+
+
 export default function Home() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 

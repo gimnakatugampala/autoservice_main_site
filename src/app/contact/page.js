@@ -1,5 +1,4 @@
 // src/app/contact/page.js - Updated form submission handler
-
 'use client';
 
 import { useState, useEffect } from 'react';
@@ -7,6 +6,8 @@ import Link from 'next/link';
 import { Mail, Phone, Clock, Send, MessageSquare, Calendar, ArrowRight, CheckCircle, Sparkles, Users, Globe, Zap, AlertCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+
+
 
 export default function Contact() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

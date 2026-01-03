@@ -35,8 +35,8 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-400">
               <li>Based in Colombo, Sri Lanka</li>
               <li>Serving all of Sri Lanka online</li>
-              <li>info@autoservice.lk</li>
-              <li>+94 11 234 5678</li>
+              <li>office@autoserviceapp.online</li>
+              <li>+94 76 496 1707</li>
             </ul>
           </div>
         </div>

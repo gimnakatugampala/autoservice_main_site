@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Car, Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 
 export default function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -19,8 +19,12 @@ export default function Header() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           <Link href="/" className="flex items-center space-x-3 group">
-            <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#156ac7] to-blue-600 flex items-center justify-center shadow-lg shadow-[#156ac7]/50 group-hover:shadow-[#156ac7]/70 transition-all group-hover:scale-110">
-              <Car className="text-white" size={24} />
+            <div className="w-12 h-12 rounded-xl overflow-hidden shadow-lg shadow-[#156ac7]/50 group-hover:shadow-[#156ac7]/70 transition-all group-hover:scale-110">
+              <img 
+                src="/assets/images/autoservice_logo.jpg" 
+                alt="autoservice.lk logo" 
+                className="w-full h-full object-cover"
+              />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-[#156ac7] to-blue-400 bg-clip-text text-transparent">
               autoservice.lk

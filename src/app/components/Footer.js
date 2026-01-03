@@ -1,7 +1,6 @@
 'use client';
 
 import Link from 'next/link';
-import { Car } from 'lucide-react';
 
 export default function Footer() {
   return (
@@ -10,8 +9,12 @@ export default function Footer() {
         <div className="grid md:grid-cols-4 gap-8 mb-8">
           <div className="col-span-2">
             <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#156ac7] to-blue-600 flex items-center justify-center">
-                <Car className="text-white" size={20} />
+              <div className="w-10 h-10 rounded-lg overflow-hidden">
+                <img 
+                  src="/assets/images/autoservice_logo.jpg" 
+                  alt="autoservice.lk logo" 
+                  className="w-full h-full object-cover"
+                />
               </div>
               <span className="text-xl font-bold">autoservice.lk</span>
             </div>

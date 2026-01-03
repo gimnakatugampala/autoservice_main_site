@@ -155,7 +155,7 @@ export default function Benefits() {
       name: "Rajith Fernando",
       role: "Owner, Premium Auto Care",
       location: "Colombo",
-      quote: "AutoService.lk transformed our business. We've increased revenue by 40% and our customers love the SMS updates.",
+      quote: "autoservice.lk transformed our business. We've increased revenue by 40% and our customers love the SMS updates.",
       avatar: "RF",
       stats: { revenue: "+40%", time: "-12hrs/week" }
     },
@@ -209,7 +209,7 @@ export default function Benefits() {
           </h1>
           
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-16">
-            Join hundreds of Sri Lankan service stations that have transformed their operations and grown their business with AutoService.lk
+            Join hundreds of Sri Lankan service stations that have transformed their operations and grown their business with autoservice.lk
           </p>
 
           {/* Main Benefits Cards */}
@@ -293,7 +293,7 @@ export default function Benefits() {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-4">Success Stories</h2>
-            <p className="text-xl text-gray-400">See how service stations across Sri Lanka are growing with AutoService.lk</p>
+            <p className="text-xl text-gray-400">See how service stations across Sri Lanka are growing with autoservice.lk</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">

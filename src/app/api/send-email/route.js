@@ -48,13 +48,13 @@ export async function POST(request) {
       },
       body: JSON.stringify({
         sender: {
-          name: 'AutoService App Contact',
+          name: 'autoservice Contact',
           email: 'contactsupport@autoserviceapp.online' // Verified sender email
         },
         to: [
           {
             email: 'contactsupport@autoserviceapp.online', // Your receiving inbox
-            name: 'AutoService Support Team'
+            name: 'autoservice Support Team'
           }
         ],
         replyTo: {
@@ -96,7 +96,7 @@ export async function POST(request) {
             name: name
           }
         ],
-        subject: 'Thank you for contacting AutoService',
+        subject: 'Thank you for contacting autoservice',
         htmlContent: `
           <h2>Thank you for reaching out!</h2>
           <p>Dear ${name},</p>
@@ -104,7 +104,7 @@ export async function POST(request) {
           <p><strong>Your message:</strong></p>
           <p>${message.replace(/\n/g, '<br>')}</p>
           <br>
-          <p>Best regards,<br>AutoService Team</p>
+          <p>Best regards,<br>autoservice Team</p>
         `
       })
     });

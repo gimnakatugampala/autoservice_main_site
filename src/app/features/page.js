@@ -328,7 +328,7 @@ export default function Features() {
           </h1>
           
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-16 leading-relaxed">
-            From vehicle management to advanced analytics, AutoService.lk provides all the tools you need to streamline operations and grow your service station.
+            From vehicle management to advanced analytics, autoservice.lk provides all the tools you need to streamline operations and grow your service station.
           </p>
 
           {/* Category Filter */}
@@ -421,7 +421,7 @@ export default function Features() {
             Ready to Get Started?
           </h2>
           <p className="text-xl text-gray-400 mb-12">
-            Try AutoService.lk free for 30 days. No credit card required.
+            Try autoservice.lk free for 30 days. No credit card required.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-10 py-5 bg-gradient-to-r from-[#156ac7] to-blue-600 text-white rounded-xl hover:shadow-2xl hover:shadow-[#156ac7]/50 transition-all font-semibold text-lg group">

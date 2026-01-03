@@ -8,7 +8,7 @@ export default function WhatsAppChat() {
   
   // Replace this with your actual WhatsApp number (in international format without + or spaces)
   const whatsappNumber = '94764961707'; // Example: 94XXXXXXXXX for Sri Lanka
-  const defaultMessage = 'Hi! I have a question about AutoService.lk';
+  const defaultMessage = 'Hi! I have a question about autoservice.lk';
   
   const handleWhatsAppClick = () => {
     const url = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(defaultMessage)}`;

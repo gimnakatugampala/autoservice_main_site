@@ -114,7 +114,7 @@ export default function Contact() {
       icon: Calendar,
       title: "Schedule Demo",
       details: "Book a call",
-      subtext: "See AutoService.lk in action",
+      subtext: "See autoservice.lk in action",
       color: "from-orange-500 to-red-500",
       action: "#"
     }
@@ -124,7 +124,7 @@ export default function Contact() {
     {
       icon: Globe,
       title: "100% Online Service",
-      description: "Access AutoService.lk from anywhere in Sri Lanka. No need to visit an office.",
+      description: "Access autoservice.lk from anywhere in Sri Lanka. No need to visit an office.",
       color: "from-[#156ac7] to-blue-500"
     },
     {
@@ -192,7 +192,7 @@ export default function Contact() {
           </h1>
           
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-12 leading-relaxed">
-            Have questions about AutoService.lk? Our team is ready to help you transform your service station. Reach out today!
+            Have questions about autoservice.lk? Our team is ready to help you transform your service station. Reach out today!
           </p>
         </div>
       </section>

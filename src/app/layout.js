@@ -16,24 +16,24 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL('https://autoservice.lk'),
   title: {
-    default: 'AutoService.lk - Free Auto Service Management System for Sri Lanka',
-    template: '%s | AutoService.lk'
+    default: 'autoservice.lk - Free Auto Service Management System for Sri Lanka',
+    template: '%s | autoservice.lk'
   },
-  description: 'Transform your service station with AutoService.lk - 100% free forever. Complete management system for Sri Lankan automotive businesses. No credit card required.',
+  description: 'Transform your service station with autoservice.lk - 100% free forever. Complete management system for Sri Lankan automotive businesses. No credit card required.',
   keywords: ['auto service', 'service station', 'Sri Lanka', 'vehicle management', 'free software', 'garage management'],
-  authors: [{ name: 'AutoService.lk' }],
-  creator: 'AutoService.lk',
-  publisher: 'AutoService.lk',
+  authors: [{ name: 'autoservice.lk' }],
+  creator: 'autoservice.lk',
+  publisher: 'autoservice.lk',
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: 'AutoService.lk - Free Auto Service Management System',
+    title: 'autoservice.lk - Free Auto Service Management System',
     description: '100% free forever. Complete service station management for Sri Lankan automotive businesses.',
     url: 'https://autoservice.lk',
-    siteName: 'AutoService.lk',
+    siteName: 'autoservice.lk',
     locale: 'en_LK',
     type: 'website',
     images: [
@@ -41,13 +41,13 @@ export const metadata = {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'AutoService.lk - Free Auto Service Management',
+        alt: 'autoservice.lk - Free Auto Service Management',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'AutoService.lk - Free Auto Service Management System',
+    title: 'autoservice.lk - Free Auto Service Management System',
     description: '100% free forever. Complete service station management for Sri Lankan automotive businesses.',
     images: ['/og-image.jpg'],
     creator: '@autoservicelk',

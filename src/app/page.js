@@ -183,7 +183,7 @@ export default function Home() {
           </h2>
           
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-12">
-            We believe every service station in Sri Lanka deserves access to world-class management tools. That's why AutoService.lk is completely free - no trials, no hidden fees, no credit card required. Ever.
+            We believe every service station in Sri Lanka deserves access to world-class management tools. That's why autoservice.lk is completely free - no trials, no hidden fees, no credit card required. Ever.
           </p>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -201,7 +201,7 @@ export default function Home() {
               { 
                 icon: Zap, 
                 title: "Always Free", 
-                desc: "We're committed to keeping AutoService.lk free forever. That's our promise to you." 
+                desc: "We're committed to keeping autoservice.lk free forever. That's our promise to you." 
               }
             ].map((item, idx) => (
               <div key={idx} className="group p-8 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all backdrop-blur-sm hover:scale-105 duration-300">

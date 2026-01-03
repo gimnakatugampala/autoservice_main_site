@@ -23,7 +23,7 @@ export default function Header() {
               <Car className="text-white" size={24} />
             </div>
             <span className="text-2xl font-bold bg-gradient-to-r from-[#156ac7] to-blue-400 bg-clip-text text-transparent">
-              AutoService.lk
+              autoservice.lk
             </span>
           </Link>
           

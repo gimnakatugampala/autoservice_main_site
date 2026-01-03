@@ -13,7 +13,7 @@ export default function Footer() {
               <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#156ac7] to-blue-600 flex items-center justify-center">
                 <Car className="text-white" size={20} />
               </div>
-              <span className="text-xl font-bold">AutoService.lk</span>
+              <span className="text-xl font-bold">autoservice.lk</span>
             </div>
             <p className="text-gray-400 leading-relaxed mb-4">
               The complete service station management system for Sri Lankan automotive businesses. 100% free forever - no hidden fees, no credit card required.
@@ -35,13 +35,13 @@ export default function Footer() {
             <ul className="space-y-2 text-gray-400">
               <li>Based in Colombo, Sri Lanka</li>
               <li>Serving all of Sri Lanka online</li>
-              <li>office@autoserviceapp.online</li>
+              <li>info@autoserviceapp.online</li>
               <li>+94 76 496 1707</li>
             </ul>
           </div>
         </div>
         <div className="border-t border-white/10 pt-8 text-center text-gray-400">
-          <p>&copy; 2026 AutoService.lk. All rights reserved. Free forever.</p>
+          <p>&copy; 2026 autoservice.lk. All rights reserved. Free forever.</p>
         </div>
       </div>
     </footer>

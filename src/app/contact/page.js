@@ -1,8 +1,9 @@
+// src/app/contact/page.js
 'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Car, Mail, Phone, Clock, Send, MessageSquare, Calendar, ArrowRight, CheckCircle, Sparkles, Users, Globe, Zap } from 'lucide-react';
+import { Car, Mail, Phone, Clock, Send, MessageSquare, Calendar, ArrowRight, CheckCircle, Sparkles, Users, Globe, Zap, AlertCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -19,6 +20,7 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
+  const [error, setError] = useState('');
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -38,10 +40,23 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError('');
     
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to send message');
+      }
+
       setIsSuccess(true);
       setFormData({
         name: '',
@@ -53,7 +68,12 @@ export default function Contact() {
       });
       
       setTimeout(() => setIsSuccess(false), 5000);
-    }, 1500);
+    } catch (err) {
+      setError(err.message);
+      setTimeout(() => setError(''), 5000);
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (e) => {
@@ -218,6 +238,16 @@ export default function Contact() {
                     <div>
                       <p className="font-semibold text-green-400">Message sent successfully!</p>
                       <p className="text-sm text-gray-400">We'll get back to you soon.</p>
+                    </div>
+                  </div>
+                )}
+
+                {error && (
+                  <div className="mb-6 p-4 bg-red-500/10 border border-red-500/30 rounded-xl flex items-center gap-3">
+                    <AlertCircle className="text-red-400" size={24} />
+                    <div>
+                      <p className="font-semibold text-red-400">Error sending message</p>
+                      <p className="text-sm text-gray-400">{error}</p>
                     </div>
                   </div>
                 )}

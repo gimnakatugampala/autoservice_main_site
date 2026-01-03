@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Car, Mail, Phone, MapPin, Clock, Send, MessageSquare, Calendar, ArrowRight, CheckCircle, Sparkles, Users, Building, Globe } from 'lucide-react';
+import { Car, Mail, Phone, Clock, Send, MessageSquare, Calendar, ArrowRight, CheckCircle, Sparkles, Users, Globe, Zap } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -98,46 +98,43 @@ export default function Contact() {
     }
   ];
 
-  const offices = [
+  const onlineAdvantages = [
     {
-      city: "Colombo",
-      address: "123 Galle Road, Colombo 03",
-      phone: "+94 11 234 5678",
-      email: "colombo@autoservice.lk",
-      hours: "Mon-Fri: 9AM-6PM"
+      icon: Globe,
+      title: "100% Online Service",
+      description: "Access AutoService.lk from anywhere in Sri Lanka. No need to visit an office.",
+      color: "from-[#156ac7] to-blue-500"
     },
     {
-      city: "Kandy",
-      address: "456 Peradeniya Road, Kandy",
-      phone: "+94 81 234 5678",
-      email: "kandy@autoservice.lk",
-      hours: "Mon-Fri: 9AM-6PM"
+      icon: Clock,
+      title: "24/7 Availability",
+      description: "Use our platform anytime, anywhere. Support available during business hours.",
+      color: "from-green-500 to-emerald-500"
     },
     {
-      city: "Galle",
-      address: "789 Matara Road, Galle",
-      phone: "+94 91 234 5678",
-      email: "galle@autoservice.lk",
-      hours: "Mon-Fri: 9AM-6PM"
+      icon: Zap,
+      title: "Instant Setup",
+      description: "Get started in minutes. No appointments or waiting required.",
+      color: "from-purple-500 to-pink-500"
     }
   ];
 
   const faqs = [
     {
       question: "How long does it take to get started?",
-      answer: "You can be up and running in less than 24 hours. Our onboarding team will help you import your data and train your staff."
+      answer: "You can be up and running in less than 24 hours. Our onboarding team will help you import your data and train your staff remotely via video call."
     },
     {
       question: "Do you offer training?",
-      answer: "Yes! We provide comprehensive training for your team, including on-site sessions and ongoing video tutorials."
+      answer: "Yes! We provide comprehensive online training for your team, including video tutorials, live training sessions, and ongoing support."
     },
     {
       question: "What kind of support do you offer?",
-      answer: "We offer 24/7 email support, phone support during business hours, and live chat. Premium plans include dedicated account managers."
+      answer: "We offer email support with 24-hour response time, phone support during business hours (Mon-Fri 9AM-6PM), and live chat. All support is completely free."
     },
     {
       question: "Can I migrate my existing data?",
-      answer: "Absolutely! Our team will help you migrate all your existing customer, vehicle, and inventory data at no extra cost."
+      answer: "Absolutely! Our team will help you migrate all your existing customer, vehicle, and inventory data at no extra cost through a simple online process."
     }
   ];
 
@@ -331,44 +328,55 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Office Locations */}
+            {/* Online Service Benefits */}
             <div className="space-y-8">
               <div>
-                <h2 className="text-4xl font-bold mb-4">Our Offices</h2>
-                <p className="text-gray-400 mb-8">Visit us at any of our locations across Sri Lanka.</p>
+                <h2 className="text-4xl font-bold mb-4">Online Service</h2>
+                <p className="text-gray-400 mb-8">We're a 100% online platform serving service stations across Sri Lanka.</p>
               </div>
               
               <div className="space-y-6">
-                {offices.map((office, idx) => (
-                  <div key={idx} className="p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all backdrop-blur-sm">
-                    <div className="flex items-start gap-4">
-                      <div className="w-12 h-12 bg-gradient-to-br from-[#156ac7] to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
-                        <MapPin className="text-white" size={24} />
+                {onlineAdvantages.map((advantage, idx) => (
+                  <div key={idx} className="group relative p-6 bg-white/5 border border-white/10 rounded-2xl hover:bg-white/10 transition-all backdrop-blur-sm overflow-hidden">
+                    <div className={`absolute inset-0 bg-gradient-to-br ${advantage.color} opacity-0 group-hover:opacity-10 transition-opacity rounded-2xl`}></div>
+                    <div className="flex items-start gap-4 relative">
+                      <div className={`w-14 h-14 bg-gradient-to-br ${advantage.color} rounded-xl flex items-center justify-center flex-shrink-0 shadow-lg group-hover:scale-110 transition-transform`}>
+                        <advantage.icon className="text-white" size={24} />
                       </div>
                       <div className="flex-1">
-                        <h3 className="text-xl font-bold mb-3">{office.city}</h3>
-                        <div className="space-y-2 text-sm text-gray-400">
-                          <p className="flex items-center gap-2">
-                            <Building size={16} className="text-[#156ac7]" />
-                            {office.address}
-                          </p>
-                          <p className="flex items-center gap-2">
-                            <Phone size={16} className="text-[#156ac7]" />
-                            {office.phone}
-                          </p>
-                          <p className="flex items-center gap-2">
-                            <Mail size={16} className="text-[#156ac7]" />
-                            {office.email}
-                          </p>
-                          <p className="flex items-center gap-2">
-                            <Clock size={16} className="text-[#156ac7]" />
-                            {office.hours}
-                          </p>
-                        </div>
+                        <h3 className="text-xl font-bold mb-2">{advantage.title}</h3>
+                        <p className="text-gray-400 leading-relaxed">{advantage.description}</p>
                       </div>
                     </div>
                   </div>
                 ))}
+              </div>
+
+              {/* Support Info */}
+              <div className="mt-8 p-6 bg-gradient-to-br from-[#156ac7]/10 to-blue-600/10 border border-[#156ac7]/30 rounded-2xl">
+                <div className="flex items-start gap-4">
+                  <div className="w-12 h-12 bg-gradient-to-br from-[#156ac7] to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                    <Users size={24} className="text-white" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold mb-2 text-white">Need Help Getting Started?</h3>
+                    <p className="text-gray-400 mb-4">Our team is available to assist you with setup, training, and any questions.</p>
+                    <div className="space-y-2 text-sm">
+                      <p className="flex items-center gap-2 text-gray-300">
+                        <Mail size={16} className="text-[#156ac7]" />
+                        <span>Email: info@autoservice.lk</span>
+                      </p>
+                      <p className="flex items-center gap-2 text-gray-300">
+                        <Phone size={16} className="text-[#156ac7]" />
+                        <span>Phone: +94 11 234 5678</span>
+                      </p>
+                      <p className="flex items-center gap-2 text-gray-300">
+                        <Clock size={16} className="text-[#156ac7]" />
+                        <span>Mon-Fri: 9AM-6PM</span>
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -410,12 +418,12 @@ export default function Contact() {
           </h2>
           
           <p className="text-xl text-gray-400 mb-12">
-            Start your free 30-day trial today. No credit card required.
+            Start using for free today. No credit card required.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="px-10 py-5 bg-gradient-to-r from-[#156ac7] to-blue-600 text-white rounded-xl hover:shadow-2xl hover:shadow-[#156ac7]/50 transition-all font-semibold text-lg group">
-              Start Free Trial
+              Start Using Free
               <ArrowRight className="inline ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </button>
             <Link href="/features" className="px-10 py-5 bg-white/5 border border-white/10 text-white rounded-xl hover:bg-white/10 transition-all font-semibold text-lg backdrop-blur-sm inline-flex items-center justify-center gap-2">

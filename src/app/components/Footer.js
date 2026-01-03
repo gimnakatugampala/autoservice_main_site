@@ -33,9 +33,10 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold mb-4">Contact</h4>
             <ul className="space-y-2 text-gray-400">
-              <li>Colombo, Sri Lanka</li>
+              <li>Based in Colombo, Sri Lanka</li>
+              <li>Serving all of Sri Lanka online</li>
               <li>info@autoservice.lk</li>
-              <li>+94 XX XXX XXXX</li>
+              <li>+94 11 234 5678</li>
             </ul>
           </div>
         </div>

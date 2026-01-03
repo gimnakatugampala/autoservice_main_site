@@ -38,7 +38,7 @@ export async function POST(request) {
       <p>${message.replace(/\n/g, '<br>')}</p>
     `;
 
-    // Send email via Brevo API
+    // Send notification email to the support team
     const response = await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
       headers: {
@@ -48,17 +48,17 @@ export async function POST(request) {
       },
       body: JSON.stringify({
         sender: {
-          name: 'AutoService.lk Contact Form',
-          email: 'noreply@autoservice.lk' // Replace with your verified sender email
+          name: 'AutoService App Contact',
+          email: 'contactsupport@autoserviceapp.online' // Verified sender email
         },
         to: [
           {
-            email: 'info@autoservice.lk', // Replace with your receiving email
-            name: 'AutoService.lk Team'
+            email: 'contactsupport@autoserviceapp.online', // Your receiving inbox
+            name: 'AutoService Support Team'
           }
         ],
         replyTo: {
-          email: email,
+          email: email, // Enables replying directly to the person who filled the form
           name: name
         },
         subject: `New Contact Form: ${serviceType} - ${name}`,
@@ -77,7 +77,7 @@ export async function POST(request) {
 
     const data = await response.json();
     
-    // Send auto-reply to customer
+    // Send auto-reply to the customer
     await fetch('https://api.brevo.com/v3/smtp/email', {
       method: 'POST',
       headers: {
@@ -87,8 +87,8 @@ export async function POST(request) {
       },
       body: JSON.stringify({
         sender: {
-          name: 'AutoService.lk',
-          email: 'noreply@autoservice.lk'
+          name: 'AutoService App',
+          email: 'contactsupport@autoserviceapp.online' // Verified sender email
         },
         to: [
           {
@@ -96,7 +96,7 @@ export async function POST(request) {
             name: name
           }
         ],
-        subject: 'Thank you for contacting AutoService.lk',
+        subject: 'Thank you for contacting AutoService',
         htmlContent: `
           <h2>Thank you for reaching out!</h2>
           <p>Dear ${name},</p>
@@ -104,7 +104,7 @@ export async function POST(request) {
           <p><strong>Your message:</strong></p>
           <p>${message.replace(/\n/g, '<br>')}</p>
           <br>
-          <p>Best regards,<br>AutoService.lk Team</p>
+          <p>Best regards,<br>AutoService Team</p>
         `
       })
     });

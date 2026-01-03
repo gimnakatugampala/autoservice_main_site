@@ -38,7 +38,7 @@ export const metadata = {
     type: 'website',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/assets/images/autoservice_logo.jpg',
         width: 1200,
         height: 630,
         alt: 'autoservice.lk - Free Auto Service Management',
@@ -49,7 +49,7 @@ export const metadata = {
     card: 'summary_large_image',
     title: 'autoservice.lk - Free Auto Service Management System',
     description: '100% free forever. Complete service station management for Sri Lankan automotive businesses.',
-    images: ['/og-image.jpg'],
+    images: ['/assets/images/autoservice_logo.jpg'],
     creator: '@autoservicelk',
   },
   robots: {
@@ -70,7 +70,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="apple-touch-icon" href="/assets/images/autoservice_logo.jpg" />
       </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}

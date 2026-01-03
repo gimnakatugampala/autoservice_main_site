@@ -1,9 +1,10 @@
-// src/app/contact/page.js
+// src/app/contact/page.js - Updated form submission handler
+
 'use client';
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Car, Mail, Phone, Clock, Send, MessageSquare, Calendar, ArrowRight, CheckCircle, Sparkles, Users, Globe, Zap, AlertCircle } from 'lucide-react';
+import { Mail, Phone, Clock, Send, MessageSquare, Calendar, ArrowRight, CheckCircle, Sparkles, Users, Globe, Zap, AlertCircle } from 'lucide-react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
@@ -20,7 +21,7 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
-  const [error, setError] = useState('');
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 50);
@@ -40,10 +41,10 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setError('');
+    setError(null);
     
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -69,8 +70,8 @@ export default function Contact() {
       
       setTimeout(() => setIsSuccess(false), 5000);
     } catch (err) {
-      setError(err.message);
-      setTimeout(() => setError(''), 5000);
+      console.error('Form submission error:', err);
+      setError(err.message || 'Failed to send message. Please try again.');
     } finally {
       setIsSubmitting(false);
     }
@@ -358,7 +359,7 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Online Service Benefits */}
+            {/* Online Service Benefits - Rest of the component remains the same */}
             <div className="space-y-8">
               <div>
                 <h2 className="text-4xl font-bold mb-4">Online Service</h2>

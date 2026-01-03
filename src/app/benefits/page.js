@@ -1,11 +1,31 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Car, TrendingUp, Clock, DollarSign, Users, Shield, Zap, Target, CheckCircle, ArrowRight, BarChart3, Sparkles, Award, ThumbsUp, HeartHandshake, Rocket } from 'lucide-react';
+import { Car, TrendingUp, Clock, DollarSign, Users, Shield, Zap, Target, CheckCircle, ArrowRight, BarChart3, Sparkles, Award, ThumbsUp, HeartHandshake, Rocket, Menu, X } from 'lucide-react';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 
 export default function Benefits() {
   const [activeTab, setActiveTab] = useState('efficiency');
+  const [scrolled, setScrolled] = useState(false);
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 50);
+    const handleMouseMove = (e) => {
+      setMousePosition({ x: e.clientX, y: e.clientY });
+    };
+    
+    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('mousemove', handleMouseMove);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, []);
 
   const tabs = [
     { id: 'efficiency', name: 'Efficiency', icon: Zap },
@@ -158,34 +178,23 @@ export default function Benefits() {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-black text-white overflow-hidden">
+      {/* Animated gradient background */}
+      <div className="fixed inset-0 bg-gradient-to-br from-[#156ac7]/20 via-black to-blue-900/20 pointer-events-none">
+        <div 
+          className="absolute w-96 h-96 bg-[#156ac7]/30 rounded-full blur-3xl transition-all duration-300"
+          style={{
+            left: `${mousePosition.x - 192}px`,
+            top: `${mousePosition.y - 192}px`,
+          }}
+        />
+      </div>
+
       {/* Navigation */}
-      <nav className="fixed w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#156ac7] to-blue-600 flex items-center justify-center shadow-lg shadow-[#156ac7]/50">
-                <Car className="text-white" size={24} />
-              </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-[#156ac7] to-blue-400 bg-clip-text text-transparent">
-                AutoService.lk
-              </span>
-            </Link>
-            
-            <div className="hidden md:flex items-center gap-4">
-              <Link href="/" className="px-6 py-2.5 text-white hover:text-[#156ac7] transition-all font-medium">
-                Home
-              </Link>
-              <button className="px-6 py-2.5 bg-gradient-to-r from-[#156ac7] to-blue-600 text-white rounded-lg hover:shadow-lg hover:shadow-[#156ac7]/50 transition-all font-medium">
-                Use App
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+     <Header />
 
       {/* Hero Section */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8">
+      <section className="pt-32 pb-20 px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-7xl mx-auto text-center">
           <div className="inline-flex items-center gap-2 px-4 py-2 bg-green-500/10 border border-green-500/30 rounded-full text-sm font-semibold text-green-400 backdrop-blur-sm mb-8">
             <Rocket size={16} />
@@ -223,7 +232,7 @@ export default function Benefits() {
       </section>
 
       {/* Detailed Benefits with Tabs */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative z-10">
         <div className="max-w-7xl mx-auto">
           {/* Tab Navigation */}
           <div className="flex justify-center gap-4 mb-16">
@@ -280,7 +289,7 @@ export default function Benefits() {
       </section>
 
       {/* Testimonials */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      <section className="py-20 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative z-10">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-5xl font-bold mb-4">Success Stories</h2>
@@ -318,7 +327,7 @@ export default function Benefits() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-32 px-4 sm:px-6 lg:px-8 border-t border-white/10">
+      <section className="py-32 px-4 sm:px-6 lg:px-8 border-t border-white/10 relative z-10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-5xl md:text-6xl font-bold mb-6">
             Start Seeing Results
@@ -338,6 +347,9 @@ export default function Benefits() {
           </div>
         </div>
       </section>
+
+      {/* Footer */}
+      <Footer />
     </div>
   );
 }

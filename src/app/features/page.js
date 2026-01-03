@@ -3,6 +3,8 @@
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { Car, Users, Package, FileText, MessageSquare, Mail, FileSpreadsheet, BarChart3, Settings, Database, Cloud, Lock, Zap, CheckCircle, ArrowRight, Smartphone, Calendar, CreditCard, Search, Bell, Clipboard, TrendingUp, FileCheck, DollarSign, Sparkles } from 'lucide-react';
+import Footer from '../components/Footer';
+import Header from '../components/Header';
 
 export default function Features() {
   const [activeCategory, setActiveCategory] = useState('all');
@@ -308,49 +310,7 @@ export default function Features() {
       </div>
 
       {/* Navigation */}
-      <nav className={`fixed w-full z-50 transition-all duration-300 ${scrolled ? 'bg-black/80 backdrop-blur-xl border-b border-white/10' : 'bg-transparent'}`}>
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-20">
-            <Link href="/" className="flex items-center space-x-3 group">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#156ac7] to-blue-600 flex items-center justify-center shadow-lg shadow-[#156ac7]/50 group-hover:shadow-[#156ac7]/70 transition-all group-hover:scale-110">
-                <Car className="text-white" size={24} />
-              </div>
-              <span className="text-2xl font-bold bg-gradient-to-r from-[#156ac7] to-blue-400 bg-clip-text text-transparent">
-                AutoService.lk
-              </span>
-            </Link>
-            
-            <div className="hidden md:flex items-center space-x-8">
-              <Link href="/" className="text-gray-300 hover:text-white transition-colors font-medium relative group">
-                Home
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#156ac7] group-hover:w-full transition-all duration-300"></span>
-              </Link>
-              <Link href="/benefits" className="text-gray-300 hover:text-white transition-colors font-medium relative group">
-                Benefits
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#156ac7] group-hover:w-full transition-all duration-300"></span>
-              </Link>
-              <a href="#pricing" className="text-gray-300 hover:text-white transition-colors font-medium relative group">
-                Pricing
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#156ac7] group-hover:w-full transition-all duration-300"></span>
-              </a>
-              <a href="#contact" className="text-gray-300 hover:text-white transition-colors font-medium relative group">
-                Contact
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#156ac7] group-hover:w-full transition-all duration-300"></span>
-              </a>
-            </div>
-
-            <div className="hidden md:flex items-center gap-4">
-              <button className="px-6 py-2.5 text-white hover:text-[#156ac7] transition-all font-medium">
-                Sign In
-              </button>
-              <button className="px-6 py-2.5 bg-gradient-to-r from-[#156ac7] to-blue-600 text-white rounded-lg hover:shadow-lg hover:shadow-[#156ac7]/50 transition-all font-medium group">
-                Use App
-                <ArrowRight className="inline ml-2 group-hover:translate-x-1 transition-transform" size={16} />
-              </button>
-            </div>
-          </div>
-        </div>
-      </nav>
+      <Header />
 
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 px-4 sm:px-6 lg:px-8">
@@ -477,42 +437,7 @@ export default function Features() {
       </section>
 
       {/* Footer */}
-      <footer className="relative border-t border-white/10 py-12 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto relative z-10">
-          <div className="grid md:grid-cols-4 gap-8 mb-8">
-            <div className="col-span-2">
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-[#156ac7] to-blue-600 flex items-center justify-center">
-                  <Car className="text-white" size={20} />
-                </div>
-                <span className="text-xl font-bold">AutoService.lk</span>
-              </div>
-              <p className="text-gray-400 leading-relaxed mb-4">
-                The complete service station management system for Sri Lankan automotive businesses.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Product</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li><Link href="/features" className="hover:text-white transition-colors">Features</Link></li>
-                <li><Link href="/benefits" className="hover:text-white transition-colors">Benefits</Link></li>
-                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-4">Contact</h4>
-              <ul className="space-y-2 text-gray-400">
-                <li>Colombo, Sri Lanka</li>
-                <li>info@autoservice.lk</li>
-                <li>+94 XX XXX XXXX</li>
-              </ul>
-            </div>
-          </div>
-          <div className="border-t border-white/10 pt-8 text-center text-gray-400">
-            <p>&copy; 2026 AutoService.lk. All rights reserved.</p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }

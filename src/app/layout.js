@@ -20,7 +20,7 @@ export const metadata = {
     template: '%s | autoservice.lk'
   },
   description: 'Transform your service station with autoservice.lk - 100% free forever. Complete management system for Sri Lankan automotive businesses. No credit card required.',
-  keywords: ['auto service', 'service station', 'Sri Lanka', 'vehicle management', 'free software', 'garage management'],
+  keywords: ['auto service', 'service station', 'Sri Lanka', 'vehicle management', 'free software', 'garage management','autoservice', 'autoservice lk', 'autoservice.lk','AUTOSERVICE','Autoservicelk','free service station software','service station software free','service station management system','autoservicelk'],
   authors: [{ name: 'autoservice.lk' }],
   creator: 'autoservice.lk',
   publisher: 'autoservice.lk',
